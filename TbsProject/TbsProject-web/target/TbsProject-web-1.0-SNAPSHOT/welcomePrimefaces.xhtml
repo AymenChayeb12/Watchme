@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <style type="text/css">
+                .value {
+                    font-weight: bold;
+                }
+
+                .ui-carousel {
+                    margin-bottom: 20px;
+                }
+            </style>
+
+
+            <h:form id="form">
+
+
+
+                <p:carousel numVisible="1" effect="easeInStrong" headerText="Tabs" style="margin-bottom:0">
+                    <p:tab title="Godfather Part I">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+                            <h:outputText
+                                value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
+                                His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+                                Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, 
+                                but given to ruthless violence whenever anything stands against the good of the family." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Godfather Part II">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+                            <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
+                                          In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, 
+                                          killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Godfather Part III">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                            <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
+                                          Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded in keeping his promise that his family would one day be completely legitimate." />
+                        </h:panelGrid>
+                    </p:tab>
+                </p:carousel>
+                <p:button  value="Add Movie" icon="pi pi-star" style="margin-right:20px;">
+                    <f:param name="productId" value="10" />
+                </p:button>
+
+                <p:panel header="New input">
+
+                    <table class="inputablestyle" style="width: 100% ">
+                        <thead>
+                            <tr>
+                                <th colspan="2">       </th>
+                                <th>name</th>
+                                <th>rating</th>
+                                <th>genre</th>
+                                <th>length</th>
+                                <th>Date</th>
+                                
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <th colspan="1" >  
+                        <h:inputText  id="cargoid1" value="#{movieController.model.movie.name}"  > 
+                            <f:validateLength minimum="1"  /> 
+                            <p:message for="cargoid1" display="icon" />
+                        </h:inputText> 
+                        </th>
+                        
+                        <td>
+                        <h:inputText  id="cargoid2" value="#{movieController.model.movie.rating}"  > 
+                            <f:validateLength minimum="1"  /> 
+                            <p:message for="cargoid2" display="icon" />
+                        </h:inputText>
+
+                        </td>
+                        <td>
+                        <h:inputText  id="cargoid3" value="#{movieController.model.movie.genre}"  > 
+                            <f:validateLength minimum="1"  /> 
+                            <p:message for="cargoid3" display="icon" />
+                        </h:inputText>
+
+                        </td>
+                        <td>
+                        <h:inputText  id="cargoid4" value="#{movieController.model.movie.length}"  > 
+                            <f:validateLength minimum="1"  /> 
+                            <p:message for="cargoid4" display="icon" />
+                        </h:inputText>
+                        </td>
+                        <td>
+                        <h:inputText  id="cargoid5" value="#{movieController.model.movie.date}"  > 
+                            <f:validateLength minimum="1"  /> 
+                            <p:message for="cargoid5" display="icon" />
+                        </h:inputText>
+                        </td>
+                        
+
+
+                        </tr>
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <br/>
+                    <p:commandButton value="Add" update="form1"   action="#{form4ACtrl.addnewTank()}" class="button1" />
+
+
+
+                </p:panel>
+
+            </h:form>
+
+        </h:body>
+
+    </f:view>
+</html>
+
